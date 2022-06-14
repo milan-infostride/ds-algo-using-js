@@ -1,0 +1,32 @@
+<html>
+    <script src="stack-object.js"></script>
+    <script>
+        function decimalToBinary(decimalNum){
+            let s= new StackObj();
+            let binaryString = "";
+            while(decimalNum>0){
+                let rem = Math.floor(decimalNum%2);
+                s.push(rem);
+                decimalNum = Math.floor(decimalNum/2);
+            }
+            while(!s.isEmpty()){
+                binaryString+=s.pop();
+            }
+            return binaryString;
+        }
+        function decimalToBase(decimalNum,base){
+            let s = new StackObj();
+            let binaryString = "";
+            let digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            while(decimalNum>0){
+                let rem = Math.floor(decimalNum%base);
+                s.push(rem);
+                decimalNum = Math.floor(decimalNum/base);
+            }
+            while(!s.isEmpty()){
+                binaryString+=digits.charAt(s.pop());
+            }
+            return binaryString;
+        }
+    </script>
+</html>
