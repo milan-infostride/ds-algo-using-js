@@ -1,0 +1,21 @@
+<script src="stack-object.js"></script>
+<script>
+    let str = "milan";
+    let str2 = "namlim";
+    function palCheck(str1,str2){
+        if(str1.length!==str2.length)
+            return false;
+        let stackString1 = new StackObj();
+        for(let char of str1){
+            stackString1.push(char);
+        }
+        let i=0;
+        while(!stackString1.isEmpty()){
+            if(str2.charAt(i)!==stackString1.pop())
+                return false;
+            i++;
+        }
+        return true;
+        
+    }
+</script>

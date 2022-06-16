@@ -1,0 +1,29 @@
+<html>
+    <script src="stack-object.js"></script>
+    <script>
+    function balanced(s){
+        let pairs = {
+            '[':']',
+            '{':'}',
+            '(':')'
+        }
+        let s_complete = new StackObj();
+        //let s_opening = new StackObj();
+        //let s_closing = new StackObj();
+        for(let char of s){
+            
+            if(pairs.hasOwnProperty(char))
+                s_complete.push(char)
+            else{
+                if(pairs[s_complete.pop()]!==char)
+                    return "NO";
+            }
+        }
+        if(s_complete.isEmpty())
+            return "YES";
+        else
+            return "NO";
+    }
+    //o(n)
+    </script>
+</html>

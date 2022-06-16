@@ -1,0 +1,9 @@
+<script>
+    function toh(n,from,to,temp){
+        if(n==0)
+            return;
+        toh(n-1,from,temp,to);
+        process.stdout.write("Moving ring "+n+" from "+from+" to "+to+"\n");
+        toh(n-1,temp,to,from);
+    }
+</script>
