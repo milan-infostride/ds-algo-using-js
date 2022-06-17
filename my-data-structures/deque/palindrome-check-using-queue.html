@@ -1,0 +1,18 @@
+<script src="deque.js"></script>
+
+<script>
+    let d = new Deque();
+    function palindromeChk(str){
+        
+        for(let char of str){
+            d.push(char);
+        }
+        let i=0;
+        while(!d.isEmpty()){
+            if(str.charAt(i)!=d.pop())
+                return false;
+            i++;
+        }
+        return true;
+    }
+</script>
